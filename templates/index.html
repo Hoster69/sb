@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slap Battles - Official Announcement</title>
+
+    <!-- Discord Embed Metadata -->
+    <meta property="og:title" content="Slap Battles - Official Shutdown Announcement">
+    <meta property="og:description" content="Slap Battles will be concluding its journey on April 20th, 2025. Join us for one last adventure!">
+    <meta property="og:url" content="https://slapbattles.onrender.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tr.rbxcdn.com/e78d11d602f8c56bdc8ce65f1a4c0626/768/432/Image/Png">
+    <meta property="og:color" content="#2ecc71">
+    <meta name="theme-color" content="#2ecc71">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -110,6 +120,26 @@
             margin-bottom: 1rem;
             display: inline-block;
         }
+
+        .countdown-box {
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin: 0 0.25rem;
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff3333;
+        }
+
+        .countdown-label {
+            font-size: 0.875rem;
+            color: #888;
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen p-4">
@@ -127,49 +157,65 @@
         <div class="game-window rounded-xl p-8">
             <div class="flex items-center justify-center mb-4">
                 <span class="warning-icon">⚠️</span>
-                <h2 class="text-4xl font-bold game-text" data-text="yo">
-                    yo
+                <h2 class="text-4xl font-bold game-text" data-text="Important Notice">
+                    Important Notice
                 </h2>
             </div>
             
             <p class="text-xl text-gray-200 mb-6">
-                i eat car keys but sadly we gotta shut down the game fr fr
-                <span class="text-red-500 font-bold">april 20th</span> is the last day, thanks for playing and stuff
+                Due to circumstances beyond our control, Slap Battles will be concluding its journey on
+                <span class="text-red-500 font-bold">April 20th, 2025</span>. We want to express our sincere gratitude for your support throughout this incredible adventure.
             </p>
             
-            <div class="text-3xl font-bold text-purple-400 mb-8">
-                <span class="game-text" data-text="Time left:">Time left:</span>
-                <span class="game-text text-red-500" data-text="{{ days_remaining }} days">{{ days_remaining }} days</span>
+            <div class="text-3xl font-bold mb-8">
+                <div class="flex justify-center items-center space-x-2">
+                    <div class="countdown-box">
+                        <div class="countdown-number">{{ days_remaining }}</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number">{{ hours_remaining }}</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number">{{ minutes_remaining }}</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number">{{ seconds_remaining }}</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
             </div>
             
             <a href="https://www.roblox.com/games/6403373529/Slap-Battles" target="_blank" class="game-button mb-8 inline-block">
-                Continue Playing
+                Play Slap Battles
             </a>
             
             <div class="space-y-6">
                 <div class="p-4 bg-[#1e1e1e] rounded-lg border-2 border-[#1e1e1e]">
-                    <h3 class="text-2xl font-bold text-yellow-400 mb-2 game-text game-text-sm" data-text="thx gamers 🎮">
-                        thx gamers 🎮
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-2 game-text game-text-sm" data-text="Thank You, Community! 🏆">
+                        Thank You, Community! 🏆
                     </h3>
                     <p class="text-gray-300">
-                        yall made this game awesome, gonna miss watching people get slapped into orbit
+                        From being featured in official Roblox events to creating countless memorable moments, your dedication has made this journey truly special.
                     </p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="p-4 bg-[#1e1e1e] rounded-lg border-2 border-[#1e1e1e]">
-                        <h3 class="text-xl font-bold text-blue-400 game-text game-text-sm" data-text="epic gamer stats">
-                            epic gamer stats
+                        <h3 class="text-xl font-bold text-blue-400 game-text game-text-sm" data-text="Achievement Highlights">
+                            Achievement Highlights
                         </h3>
-                        <p class="text-gray-300">billions of slaps thrown</p>
-                        <p class="text-gray-300">too many rage quits to count</p>
+                        <p class="text-gray-300">Featured in Roblox Events</p>
+                        <p class="text-gray-300">Millions of Active Players</p>
                     </div>
                     <div class="p-4 bg-[#1e1e1e] rounded-lg border-2 border-[#1e1e1e]">
-                        <h3 class="text-xl font-bold text-green-400 game-text game-text-sm" data-text="game stuff">
-                            game stuff
+                        <h3 class="text-xl font-bold text-green-400 game-text game-text-sm" data-text="Legacy">
+                            Legacy
                         </h3>
-                        <p class="text-gray-300">started as a meme game</p>
-                        <p class="text-gray-300">became something legendary</p>
+                        <p class="text-gray-300">Innovative Gameplay Design</p>
+                        <p class="text-gray-300">Thriving Community Impact</p>
                     </div>
                 </div>
             </div>
@@ -187,6 +233,34 @@
             elements.forEach((el, index) => {
                 el.style.animationDelay = `${index * 0.2}s`;
             });
+
+            // Update countdown every second
+            function updateCountdown() {
+                const shutdownDate = new Date('2025-04-20T00:00:00Z');
+                const now = new Date();
+                const diff = shutdownDate - now;
+
+                if (diff <= 0) {
+                    document.querySelectorAll('.countdown-number').forEach(el => {
+                        el.textContent = '0';
+                    });
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.querySelectorAll('.countdown-number')[0].textContent = days;
+                document.querySelectorAll('.countdown-number')[1].textContent = hours;
+                document.querySelectorAll('.countdown-number')[2].textContent = minutes;
+                document.querySelectorAll('.countdown-number')[3].textContent = seconds;
+            }
+
+            // Update immediately and then every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         });
     </script>
 </body>

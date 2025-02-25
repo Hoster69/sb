@@ -21,13 +21,21 @@ def health_check():
 
 @app.route('/')
 def index():
-    # Calculate time remaining until April 20th
-    shutdown_date = datetime(2024, 4, 20, tzinfo=timezone.utc)
+    # Calculate time remaining until April 20th 2025
+    shutdown_date = datetime(2025, 4, 20, tzinfo=timezone.utc)
     current_date = datetime.now(timezone.utc)
     time_remaining = shutdown_date - current_date
-    days_remaining = max(0, time_remaining.days)
     
-    return render_template('index.html', days_remaining=days_remaining)
+    days_remaining = time_remaining.days
+    hours = time_remaining.seconds // 3600
+    minutes = (time_remaining.seconds % 3600) // 60
+    seconds = time_remaining.seconds % 60
+    
+    return render_template('index.html', 
+                         days_remaining=max(0, days_remaining),
+                         hours_remaining=hours,
+                         minutes_remaining=minutes,
+                         seconds_remaining=seconds)
 
 if __name__ == '__main__':
     # Start the keep-alive thread

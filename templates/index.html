@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slap Battles - Official Announcement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .game-text {
+            position: relative;
+            color: white;
+            z-index: 1;
+        }
+        
+        .game-text::before {
+            content: attr(data-text);
+            position: absolute;
+            -webkit-text-stroke: 6px black;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            color: transparent;
+        }
+        
+        .game-text-sm::before {
+            -webkit-text-stroke: 4px black;
+        }
+
+        .game-window {
+            background: #282828;
+            border: 3px solid #000000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .circle-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #313232;
+            background-image: 
+                radial-gradient(circle at 100% 150%, #313232 24%, #282828 25%, #282828 28%, #313232 29%, #313232 36%, #282828 36%, #282828 40%, transparent 40%, transparent),
+                radial-gradient(circle at 0    150%, #313232 24%, #282828 25%, #282828 28%, #313232 29%, #313232 36%, #282828 36%, #282828 40%, transparent 40%, transparent),
+                radial-gradient(circle at 50%  100%, #282828 10%, #313232 11%, #313232 23%, #282828 24%, #282828 30%, #313232 31%, #313232 43%, #282828 44%, #282828 50%, #313232 51%, #313232 63%, #282828 64%, #282828 71%, transparent 71%, transparent),
+                radial-gradient(circle at 100% 50%, #282828 5%, #313232 6%, #313232 15%, #282828 16%, #282828 20%, #313232 21%, #313232 30%, #282828 31%, #282828 35%, #313232 36%, #313232 45%, #282828 46%, #282828 49%, transparent 50%, transparent),
+                radial-gradient(circle at 0    50%, #282828 5%, #313232 6%, #313232 15%, #282828 16%, #282828 20%, #313232 21%, #313232 30%, #282828 31%, #282828 35%, #313232 36%, #313232 45%, #282828 46%, #282828 49%, transparent 50%, transparent);
+            background-size: 100px 100px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: #313232;
+            background-image: 
+                radial-gradient(circle at 50% 50%, #282828 0%, transparent 60%),
+                radial-gradient(circle at 0% 0%, #282828 0%, transparent 40%),
+                radial-gradient(circle at 100% 0%, #282828 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, #282828 0%, transparent 40%),
+                radial-gradient(circle at 0% 100%, #282828 0%, transparent 40%);
+            min-height: 100vh;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .game-button {
+            background: #2ecc71;
+            border: 3px solid #27ae60;
+            border-radius: 10px;
+            padding: 8px 20px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .game-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+        }
+        .warning-icon {
+            color: #ff3333;
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        .official-badge {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            color: black;
+            text-shadow: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="circle-pattern"></div>
+    
+    <div class="max-w-4xl w-full space-y-8 text-center animate-fade-in-up relative z-10">
+        <div class="official-badge">
+            Official Announcement
+        </div>
+
+        <h1 class="text-6xl md:text-7xl font-bold game-text mb-6" data-text="Goodbye Slap Battles! 👋">
+            Goodbye Slap Battles! 👋
+        </h1>
+        
+        <div class="game-window rounded-xl p-8">
+            <div class="flex items-center justify-center mb-4">
+                <span class="warning-icon">⚠️</span>
+                <h2 class="text-4xl font-bold game-text" data-text="yo">
+                    yo
+                </h2>
+            </div>
+            
+            <p class="text-xl text-gray-200 mb-6">
+                i eat car keys but sadly we gotta shut down the game fr fr
+                <span class="text-red-500 font-bold">april 20th</span> is the last day, thanks for playing and stuff
+            </p>
+            
+            <div class="text-3xl font-bold text-purple-400 mb-8">
+                <span class="game-text" data-text="Time left:">Time left:</span>
+                <span class="game-text text-red-500" data-text="{{ days_remaining }} days">{{ days_remaining }} days</span>
+            </div>
+            
+            <a href="https://www.roblox.com/games/6403373529/Slap-Battles" target="_blank" class="game-button mb-8 inline-block">
+                Continue Playing
+            </a>
+            
+            <div class="space-y-6">
+                <div class="p-4 bg-[#1e1e1e] rounded-lg border-2 border-[#1e1e1e]">
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-2 game-text game-text-sm" data-text="thx gamers 🎮">
+                        thx gamers 🎮
+                    </h3>
+                    <p class="text-gray-300">
+                        yall made this game awesome, gonna miss watching people get slapped into orbit
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-[#1e1e1e] rounded-lg border-2 border-[#1e1e1e]">
+                        <h3 class="text-xl font-bold text-blue-400 game-text game-text-sm" data-text="epic gamer stats">
+                            epic gamer stats
+                        </h3>
+                        <p class="text-gray-300">billions of slaps thrown</p>
+                        <p class="text-gray-300">too many rage quits to count</p>
+                    </div>
+                    <div class="p-4 bg-[#1e1e1e] rounded-lg border-2 border-[#1e1e1e]">
+                        <h3 class="text-xl font-bold text-green-400 game-text game-text-sm" data-text="game stuff">
+                            game stuff
+                        </h3>
+                        <p class="text-gray-300">started as a meme game</p>
+                        <p class="text-gray-300">became something legendary</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="mt-8 text-gray-500">
+            <p>© 2024 Slap Battles. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate-fade-in-up');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html> 

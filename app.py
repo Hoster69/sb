@@ -1,10 +1,10 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, url_for
 from datetime import datetime, timezone
 import threading
 import time
 import urllib.request
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 def keep_alive():
     while True:
